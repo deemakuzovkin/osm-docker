@@ -11,4 +11,4 @@ ADD custom_files/$OSM_FILE /tmp/$OSM_FILE
 RUN apt-get update && apt-get install osm2pgsql -y
 RUN apt-get clean
 RUN rm -rf /var/cache/apt/lists
-CMD osm2pgsql --host=$POSTGRES_HOST --port=$POSTGRES_PORT --user=$POSTGRES_USER --database=$POSTGRES_DB tmp/$IMPORT_FILE_NAME
+CMD osm2pgsql --slim --host=$POSTGRES_HOST --port=$POSTGRES_PORT --user=$POSTGRES_USER --database=$POSTGRES_DB tmp/$IMPORT_FILE_NAME
